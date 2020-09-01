@@ -5,12 +5,9 @@
 
 import { combineReducers } from 'redux';
 import api from './api';
-import counter from './counter';
 
 export { actions as api } from './api';
-export { actions as counter } from './counter';
 
 export default combineReducers({
-  api,
-  counter
+  api
 });

@@ -6,6 +6,6 @@
 import './styles';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router } from 'src/containers';
+import { reduxDemo } from 'src/containers';
 
-ReactDOM.render(<Router />, document.getElementById('r-app'));
+ReactDOM.render(<reduxDemo />, document.getElementById('r-app'));
