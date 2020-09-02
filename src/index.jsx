@@ -6,6 +6,6 @@
 import './styles';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { reduxDemo } from 'src/containers';
+import { App } from 'src/containers';
 
-ReactDOM.render(<reduxDemo />, document.getElementById('r-app'));
+ReactDOM.render(<App />, document.getElementById('r-app'));

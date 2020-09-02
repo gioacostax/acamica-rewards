@@ -4,10 +4,13 @@
  */
 
 import { combineReducers } from 'redux';
-import api from './api';
+import products from './products';
+import user from './user';
 
-export { actions as api } from './api';
+export { actions as products } from './products';
+export { actions as user } from './user';
 
 export default combineReducers({
-  api
+  products,
+  user
 });

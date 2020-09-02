@@ -9,8 +9,16 @@
 import React from 'react';
 import redux, { store } from 'src/redux';
 
-import ReduxContainer from './reduxDemo.jsx';
+import AppContainer from './app.jsx';
+import UserContainer from './user.jsx';
+import ProductsContainer from './products.jsx';
 
-const ReduxProvider = () => <redux.Provider store={store}><ReduxContainer /></redux.Provider>;
-export const Redux = /* devblock:start */require('react-hot-loader/root').hot(ReduxProvider)
+const ReduxProvider = () => <redux.Provider store={store}><AppContainer /></redux.Provider>;
+export const App = /* devblock:start */require('react-hot-loader/root').hot(ReduxProvider)
 || /* devblock:end */ReduxProvider;
+
+export const User = /* devblock:start */require('react-hot-loader/root').hot(UserContainer)
+|| /* devblock:end */UserContainer;
+
+export const Products = /* devblock:start */require('react-hot-loader/root').hot(ProductsContainer)
+|| /* devblock:end */ProductsContainer;
