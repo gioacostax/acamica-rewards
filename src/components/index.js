@@ -4,3 +4,4 @@
  */
 
 export Button from './button';
+export Product from './product';
