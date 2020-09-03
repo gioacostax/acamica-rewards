@@ -3,8 +3,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import token from './token.json';
-
 /* Actions Types */
 const SET_USER_LOADING = 'USER.SET_USER_LOADING';
 const SET_USER_ERROR = 'USER.SET_USER_ERROR';
@@ -15,7 +13,7 @@ const SET_HISTORY_ERROR = 'USER.SET_HISTORY_ERROR';
 const SET_HISTORY = 'USER.SET_HISTORY';
 
 /* Private Actions */
-const getUser = () => async (dispatch) => {
+const getUser = (token) => async (dispatch) => {
   // Reseteamos errores
   dispatch({ type: SET_USER_ERROR, value: null });
 
@@ -25,7 +23,7 @@ const getUser = () => async (dispatch) => {
   // Configuramos cabeceras
   const headers = {
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${token.value}`
+    Authorization: `Bearer ${token}`
   };
 
   try {
@@ -46,7 +44,7 @@ const getUser = () => async (dispatch) => {
   }
 };
 
-const getHistory = () => async (dispatch) => {
+const getHistory = (token) => async (dispatch) => {
   // Reseteamos errores
   dispatch({ type: SET_HISTORY_ERROR, value: null });
 
@@ -56,7 +54,7 @@ const getHistory = () => async (dispatch) => {
   // Configuramos cabeceras
   const headers = {
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${token.value}`
+    Authorization: `Bearer ${token}`
   };
 
   try {

@@ -3,8 +3,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import token from './token.json';
-
 /* Actions Types */
 const CLEAR_PRODUCTS = 'PRODUCTS.CLEAR_PRODUCTS';
 const SET_LOADING = 'PRODUCTS.SET_LOADING';
@@ -12,7 +10,7 @@ const SET_ERROR = 'PRODUCTS.SET_ERROR';
 const SET_PRODUCTS = 'PRODUCTS.SET_PRODUCTS';
 
 /* Private Actions */
-const getProducts = () => async (dispatch) => {
+const getProducts = (token) => async (dispatch) => {
   // Limpiamos la lista de productos
   dispatch({ type: CLEAR_PRODUCTS });
 
@@ -25,7 +23,7 @@ const getProducts = () => async (dispatch) => {
   // Configuramos cabeceras
   const headers = {
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${token.value}`
+    Authorization: `Bearer ${token}`
   };
 
   try {

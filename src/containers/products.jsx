@@ -15,13 +15,13 @@ const style = {
   boxSizing: 'border-box'
 };
 
-export default function Products() {
+export default function Products({ token }) {
   const store = redux.useSelector((states) => states);
   const dispatch = redux.useDispatch();
 
   useEffect(() => {
-    dispatch(products.getProducts());
-  }, [dispatch]);
+    dispatch(products.getProducts(token));
+  }, [dispatch, token]);
 
   return (
     <div style={style}>
