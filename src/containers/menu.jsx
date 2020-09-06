@@ -5,7 +5,7 @@
 
 import React, { useEffect } from 'react';
 import redux, { user } from 'src/redux';
-import { Profile, Points } from 'src/components';
+import { Profile, Points, History } from 'src/components';
 
 const style = {
   display: 'flex',
@@ -30,6 +30,7 @@ export default function User({ token }) {
     <div style={style}>
       <Profile />
       <Points token={token} />
+      <History token={token} />
     </div>
   );
 }
