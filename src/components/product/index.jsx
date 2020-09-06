@@ -40,9 +40,6 @@ export default React.memo(function Product({
       let data = await fetch('https://coding-challenge-api.aerolab.co/redeem', query);
       if (!data.ok) throw Error(data.statusText);
 
-      // Transformamos la información
-      data = await data.json();
-
       // TODO: Lanzar modal exitoso
       // Actualizamos datos de usuario
       dispatch(user.getUser(token));

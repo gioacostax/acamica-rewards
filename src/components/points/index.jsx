@@ -37,7 +37,7 @@ export default React.memo(function Points({ token }) {
 
       // TODO: Lanzar modal exitoso
       // Actualizamos datos de usuario
-      dispatch(user.getUser(token));
+      dispatch(user.setPoints(data['New Points']));
       setLoading(false);
     } catch (error) {
       // TODO: Lanzar modal error
