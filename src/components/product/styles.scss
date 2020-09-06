@@ -67,19 +67,9 @@
     }
   }
 
-  .loader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    position: absolute;
-    width: 250px;
-    height: 340px;
-    background: #ffffffc0;
-    border-radius: 12px;
-
-    img {
-      height: 50px;
-    }
+  img.loader {
+    margin-top: auto;
+    margin-bottom: 25px;
+    height: 40px;
   }
 }

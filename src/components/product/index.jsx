@@ -44,6 +44,8 @@ export default React.memo(function Product({
       data = await data.json();
 
       // TODO: Lanzar modal exitoso
+      // Actualizamos datos de usuario
+      dispatch(user.getUser(token));
       setLoading(false);
     } catch (error) {
       // TODO: Lanzar modal error
@@ -53,14 +55,15 @@ export default React.memo(function Product({
 
   return (
     <div className="product">
-      <div className="loader" style={loading ? {} : { display: 'none' }}><img src={loader} alt="loader" /></div>
       <img className="picture" src={picture} alt={name} />
       <h3>{name}</h3>
       <div className="category">{category}</div>
       {
-        store.user.points >= cost
-          ? <button type="button" onClick={redeem}><img className="coin" src={coin} alt="coin" />{cost}</button>
-          : <button type="button" disabled><img className="coin" src={coin} alt="coin" />Faltan {cost - store.user.points}</button>
+        loading
+          ? <img className="loader" src={loader} alt="loader" />
+          : store.user.info.points >= cost
+            ? <button type="button" onClick={redeem}><img className="coin" src={coin} alt="coin" />{cost}</button>
+            : <button type="button" disabled><img className="coin" src={coin} alt="coin" />Faltan {cost - store.user.info.points}</button>
       }
     </div>
   );
