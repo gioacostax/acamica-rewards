@@ -12,6 +12,8 @@ const SET_HISTORY_LOADING = 'USER.SET_HISTORY_LOADING';
 const SET_HISTORY_ERROR = 'USER.SET_HISTORY_ERROR';
 const SET_HISTORY = 'USER.SET_HISTORY';
 
+const SET_POINTS = 'USER.SET_POINTS';
+
 /* Private Actions */
 const getUser = (token) => async (dispatch) => {
   // Reseteamos errores
@@ -75,8 +77,10 @@ const getHistory = (token) => async (dispatch) => {
   }
 };
 
+const setPoints = (value) => ({ type: SET_POINTS, value });
+
 /* Public Actions */
-export const actions = { getUser, getHistory };
+export const actions = { getUser, getHistory, setPoints };
 
 /* Initial State */
 const initialState = {
@@ -122,7 +126,7 @@ export default (state = initialState, { type, value }) => {
           points: value.points
         },
         redeemHistory: {
-          list: value.redeemHistory,
+          list: value.redeemHistory.reverse(),
           loading: false,
           error: null
         }
@@ -147,6 +151,16 @@ export default (state = initialState, { type, value }) => {
       return {
         ...state,
         redeemHistory: { ...state.redeemHistory, list: value }
+      };
+    }
+
+    case SET_POINTS: {
+      return {
+        ...state,
+        info: {
+          ...state.info,
+          points: value
+        }
       };
     }
 
