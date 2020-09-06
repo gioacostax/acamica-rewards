@@ -5,3 +5,4 @@
 
 export Product from './product';
 export Profile from './profile';
+export Points from './points';
