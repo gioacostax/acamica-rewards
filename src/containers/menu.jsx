@@ -3,8 +3,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'react';
-import redux, { products, user } from 'src/redux';
+import React, { useEffect } from 'react';
+import redux, { user } from 'src/redux';
+import { Profile } from 'src/components';
 
 const style = {
   display: 'flex',
@@ -12,18 +13,22 @@ const style = {
   width: 250,
   height: '100%',
   padding: 25,
-  backgroundColor: '#000',
+  backgroundColor: '#65727B',
   boxSizing: 'border-box',
   color: '#fff'
 };
 
-export default function User() {
+export default function User({ token }) {
   const store = redux.useSelector((states) => states);
   const dispatch = redux.useDispatch();
 
+  useEffect(() => {
+    dispatch(user.getUser(token));
+  }, [dispatch, token]);
+
   return (
     <div style={style}>
-      Usuario
+      <Profile />
     </div>
   );
 }

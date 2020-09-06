@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { User, Products } from 'src/containers';
+import { Menu, Products } from 'src/containers';
 
 const style = {
   display: 'flex',
@@ -18,7 +18,7 @@ const TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRkOWU5OTQ0NGZl
 export default function App() {
   return (
     <div style={style}>
-      <User token={TOKEN} />
+      <Menu token={TOKEN} />
       <Products token={TOKEN} />
     </div>
   );

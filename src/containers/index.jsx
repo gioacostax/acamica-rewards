@@ -10,15 +10,15 @@ import React from 'react';
 import redux, { store } from 'src/redux';
 
 import AppContainer from './app.jsx';
-import UserContainer from './user.jsx';
+import MenuContainer from './menu.jsx';
 import ProductsContainer from './products.jsx';
 
 const ReduxProvider = () => <redux.Provider store={store}><AppContainer /></redux.Provider>;
 export const App = /* devblock:start */require('react-hot-loader/root').hot(ReduxProvider)
 || /* devblock:end */ReduxProvider;
 
-export const User = /* devblock:start */require('react-hot-loader/root').hot(UserContainer)
-|| /* devblock:end */UserContainer;
+export const Menu = /* devblock:start */require('react-hot-loader/root').hot(MenuContainer)
+|| /* devblock:end */MenuContainer;
 
 export const Products = /* devblock:start */require('react-hot-loader/root').hot(ProductsContainer)
 || /* devblock:end */ProductsContainer;

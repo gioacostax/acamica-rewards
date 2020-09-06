@@ -80,7 +80,7 @@ export const actions = { getUser, getHistory };
 
 /* Initial State */
 const initialState = {
-  user: {
+  info: {
     _id: null,
     name: null,
     points: null,
@@ -100,22 +100,22 @@ export default (state = initialState, { type, value }) => {
     case SET_USER_ERROR: {
       return {
         ...state,
-        user: { ...state.user, error: value }
+        info: { ...state.info, error: value }
       };
     }
 
     case SET_USER_LOADING: {
       return {
         ...state,
-        user: { ...state.user, loading: value }
+        info: { ...state.info, loading: value }
       };
     }
 
     case SET_USER: {
       return {
         ...state,
-        user: {
-          ...state.user,
+        info: {
+          ...state.info,
           // eslint-disable-next-line no-underscore-dangle
           id: value._id,
           name: value.name,
