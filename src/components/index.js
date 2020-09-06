@@ -3,5 +3,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-export Button from './button';
 export Product from './product';
+export Profile from './profile';
