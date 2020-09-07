@@ -9,3 +9,4 @@ export Points from './points';
 export History from './history';
 export Pagination from './pagination';
 export Filter from './filter';
+export Modal from './modal';

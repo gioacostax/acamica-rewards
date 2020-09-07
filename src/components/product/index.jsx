@@ -5,6 +5,7 @@
 
 import './styles';
 import React, { useState } from 'react';
+import { Modal } from 'src/components';
 import redux, { user } from 'src/redux';
 import defaultPicture from 'src/assets/img/acer.png';
 import coin from 'src/assets/img/coin.svg';
@@ -19,6 +20,7 @@ export default React.memo(function Product({
   token = null
 }) {
   const [loading, setLoading] = useState(false);
+  const [modal, setModal] = useState(null);
   const store = redux.useSelector((states) => states);
   const dispatch = redux.useDispatch();
 
@@ -37,21 +39,31 @@ export default React.memo(function Product({
 
     try {
       // Traemos la información
-      let data = await fetch('https://coding-challenge-api.aerolab.co/redeem', query);
+      const data = await fetch('https://coding-challenge-api.aerolab.co/redeem', query);
       if (!data.ok) throw Error(data.statusText);
 
-      // TODO: Lanzar modal exitoso
       // Actualizamos datos de usuario
       dispatch(user.getUser(token));
       setLoading(false);
+      setModal({ type: 'success', message: `Redimiste un ${name}!` });
     } catch (error) {
-      // TODO: Lanzar modal error
       setLoading(false);
+      setModal({ type: 'error', message: `Hubo un error al remidir un ${name}!` });
     }
   };
 
   return (
     <div className="product">
+      {
+        modal && (
+          <Modal
+            type={modal.type}
+            onRequestClose={() => setModal(null)}
+          >
+            {modal.message}
+          </Modal>
+        )
+      }
       <img className="picture" src={picture} alt={name} />
       <h3>{name}</h3>
       <div className="category">{category}</div>
