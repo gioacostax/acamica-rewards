@@ -14,8 +14,17 @@
   overflow-Y: scroll;
 
   .list {
+    flex: 1;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
+    &[loading] {
+      align-items: center;
+    }
+
+    img.loader {
+      height: 36px;
+    }
   }
 }

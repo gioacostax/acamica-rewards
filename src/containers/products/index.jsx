@@ -24,7 +24,7 @@ export default function Products({ token }) {
   return (
     <div className="products">
       <Filter />
-      <div className="list">
+      <div className="list" loading={store.products.loading ? '' : undefined}>
         {
           store.products.loading
             ? <img className="loader" src={loader} alt="loader" />
