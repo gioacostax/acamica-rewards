@@ -5,15 +5,13 @@
  */
 
 import './styles';
-import React, { useState } from 'react';
-import redux, { user } from 'src/redux';
+import React from 'react';
+import redux from 'src/redux';
 import loader from 'src/assets/img/loader.gif';
 import box from 'src/assets/img/box.svg';
-import arrow from 'src/assets/img/arrow.svg';
 
-export default React.memo(function History({ token }) {
+export default React.memo(function History() {
   const store = redux.useSelector((states) => states);
-  const dispatch = redux.useDispatch();
 
   return (
     <div className="history">
@@ -23,7 +21,7 @@ export default React.memo(function History({ token }) {
           store.user.info.loading
             ? <img className="loader" src={loader} alt="loader" />
             // eslint-disable-next-line no-extra-boolean-cast
-            : !!store.user.redeemHistory.list
+            : !!store.user.redeemHistory.list.length
               ? store.user.redeemHistory.list.map((item) => (
                 <div key={Math.random().toString(36).substring(7)} className="history-item">
                   <div className="name">{item.name}</div>

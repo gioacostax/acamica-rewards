@@ -1,0 +1,15 @@
+/**
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 100%;
+  padding: 25px;
+  background-color: #65727b;
+  box-sizing: border-box;
+  color: #fff;
+}

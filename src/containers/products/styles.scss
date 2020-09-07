@@ -1,0 +1,15 @@
+/**
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.products {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+  padding: 25px;
+  box-sizing: border-box;
+  overflow-Y: scroll;
+}

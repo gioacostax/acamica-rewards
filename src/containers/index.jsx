@@ -9,9 +9,9 @@
 import React from 'react';
 import redux, { store } from 'src/redux';
 
-import AppContainer from './app.jsx';
-import MenuContainer from './menu.jsx';
-import ProductsContainer from './products.jsx';
+import AppContainer from './app';
+import MenuContainer from './menu';
+import ProductsContainer from './products';
 
 const ReduxProvider = () => <redux.Provider store={store}><AppContainer /></redux.Provider>;
 export const App = /* devblock:start */require('react-hot-loader/root').hot(ReduxProvider)
