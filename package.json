@@ -1,7 +1,7 @@
 {
-  "name": "react-kit",
+  "name": "acamica-rewards",
   "version": "1.0.0",
-  "description": "React Starter Kit",
+  "description": "Acamica Rewards",
   "scripts": {
     "start": "webpack-dev-server --open",
     "lint": "yarn lint:js && yarn lint:css",
