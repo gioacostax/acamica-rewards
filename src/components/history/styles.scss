@@ -11,7 +11,7 @@
   border: 2px solid #aaa;
   border-radius: 9px;
 
-  background: #848E95;
+  background: #848e95;
 
   .title {
     display: flex;
@@ -23,9 +23,9 @@
 
     padding: 10px;
     width: 100%;
-    background: #FFFFFF80;
+    background: #ffffff80;
 
-    color: #65727B;
+    color: #65727b;
     font-size: 1.2em;
     font-weight: 600;
 
@@ -49,17 +49,16 @@
       width: 100%;
       padding-bottom: 5px;
       margin-bottom: 10px;
-      border-bottom: 1px solid #FFFFFF80;
+      border-bottom: 1px solid #ffffff80;
 
       &:last-child {
         margin-bottom: 0;
       }
+    }
 
-      .date {
-        color: #FFFFFF80;
-        font-size: 0.9em;
-      }
-
+    .date {
+      color: #ffffff80;
+      font-size: 0.9em;
     }
 
     img.loader {

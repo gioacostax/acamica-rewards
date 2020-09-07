@@ -1,4 +1,3 @@
-/* eslint-disable no-plusplus */
 /**
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -13,8 +12,11 @@ export default React.memo(function Filter() {
   const [category, setCategory] = useState();
 
   const handleCategory = ({ target: { value } }) => {
+    // Si la categoría es diferente a 'Todos'
     if (value !== '') dispatch(products.orderList('category', value));
+    // Si no, ordenar la lista por defecho
     else dispatch(products.orderList());
+    // Configuramos nuestro estado de categoría para usarlo en los filtros de precio
     setCategory(value);
   };
 

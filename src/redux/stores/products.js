@@ -48,6 +48,7 @@ const getProducts = (token) => async (dispatch) => {
 const orderList = (order, value) => (dispatch, getState) => {
   let list = [];
 
+  // Ordenamos la lista según el el filtro
   switch (order) {
     case 'category':
       list = getState().products.listOriginal.filter((item) => item.category === value);

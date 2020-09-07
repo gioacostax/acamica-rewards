@@ -10,13 +10,14 @@ import redux, { products } from 'src/redux';
 import { Product, Pagination, Filter } from 'src/components';
 import loader from 'src/assets/img/loader.gif';
 
-const P_SIZE = 16;
+const P_SIZE = 16; // Número de productos por página
 
 export default function Products({ token }) {
   const store = redux.useSelector((states) => states);
   const dispatch = redux.useDispatch();
   const [page, setPage] = useState(1);
 
+  // Cargamos lista de productos al inicio
   useEffect(() => {
     dispatch(products.getProducts(token));
   }, [dispatch, token]);

@@ -15,6 +15,7 @@ export default React.memo(function Pagination({
 }) {
   const buttons = [];
 
+  // Cantidad de botones según páginas
   for (let i = 0; i < size / sizePage; i++) {
     buttons[i] = (
       <button

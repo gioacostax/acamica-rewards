@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 /**
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -28,7 +27,7 @@ export default React.memo(function History() {
                   <div className="date">{item.createDate.split('T')[0]}</div>
                 </div>
               ))
-              : 'Sin items'
+              : 'No has redimido aún'
         }
       </div>
     </div>

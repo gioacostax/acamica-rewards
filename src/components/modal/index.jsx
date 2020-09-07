@@ -8,7 +8,11 @@ import React from 'react';
 import success from 'src/assets/img/success.svg';
 import error from 'src/assets/img/error.svg';
 
-export default React.memo(function Modal({ type, onRequestClose, children }) {
+export default React.memo(function Modal({
+  type = 'success',
+  onRequestClose = () => {},
+  children = ''
+}) {
   return (
     <div className="modal" type={type}>
       <div className="window">

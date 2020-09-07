@@ -7,7 +7,7 @@ import './styles.scss';
 import React from 'react';
 import { Menu, Products } from 'src/containers';
 
-const TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRkOWU5OTQ0NGZlNDAwNmRhOTkyNGQiLCJpYXQiOjE1OTE1ODIzNjF9.-f40dyUIGFsBSB_PTeBGdSLI58I21-QBJNi9wkODcKk';
+const TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjRlYWNjMDc0MjM1MjAwMWVkOTA5OWYiLCJpYXQiOjE1OTg5OTE1NTJ9.XzYOIUHAf_5KdVRvZGMVR5dc5dfUt6Q9PfNuI-8alnM';
 
 export default function App() {
   return (

@@ -24,6 +24,7 @@ export default React.memo(function Product({
   const store = redux.useSelector((states) => states);
   const dispatch = redux.useDispatch();
 
+  // Función para redimir productos
   const redeem = async () => {
     setLoading(true);
 

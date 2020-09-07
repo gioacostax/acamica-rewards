@@ -11,6 +11,7 @@ import { Profile, Points, History } from 'src/components';
 export default function User({ token }) {
   const dispatch = redux.useDispatch();
 
+  // Cargamos datos de usuario al iniciar
   useEffect(() => {
     dispatch(user.getUser(token));
   }, [dispatch, token]);

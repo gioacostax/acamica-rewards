@@ -14,6 +14,7 @@ export default React.memo(function Points({ token }) {
   const [loading, setLoading] = useState(false);
   const dispatch = redux.useDispatch();
 
+  // Función para añadir puntos
   const handleAdd = async (value) => {
     setLoading(true);
 
@@ -35,12 +36,10 @@ export default React.memo(function Points({ token }) {
       // Transformamos la información
       data = await data.json();
 
-      // TODO: Lanzar modal exitoso
-      // Actualizamos datos de usuario
+      // Actualizamos puntos de usuario
       dispatch(user.setPoints(data['New Points']));
       setLoading(false);
     } catch (error) {
-      // TODO: Lanzar modal error
       setLoading(false);
     }
   };
