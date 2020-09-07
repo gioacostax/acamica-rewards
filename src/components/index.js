@@ -7,3 +7,4 @@ export Product from './product';
 export Profile from './profile';
 export Points from './points';
 export History from './history';
+export Pagination from './pagination';
