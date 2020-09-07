@@ -8,6 +8,7 @@ const CLEAR_PRODUCTS = 'PRODUCTS.CLEAR_PRODUCTS';
 const SET_LOADING = 'PRODUCTS.SET_LOADING';
 const SET_ERROR = 'PRODUCTS.SET_ERROR';
 const SET_PRODUCTS = 'PRODUCTS.SET_PRODUCTS';
+const ORDER_PRODUCTS = 'PRODUCTS.ORDER_PRODUCTS';
 
 /* Private Actions */
 const getProducts = (token) => async (dispatch) => {
@@ -44,12 +45,39 @@ const getProducts = (token) => async (dispatch) => {
   }
 };
 
+const orderList = (order, value) => (dispatch, getState) => {
+  let list = [];
+
+  switch (order) {
+    case 'category':
+      list = getState().products.listOriginal.filter((item) => item.category === value);
+      break;
+
+    case 'lPrice':
+      list = getState().products.listOriginal.sort((a, b) => ((a.cost > b.cost) ? 1 : -1));
+      if (value) list = list.filter((item) => item.category === value);
+      break;
+
+    case 'hPrice':
+      list = getState().products.listOriginal.sort((a, b) => ((a.cost < b.cost) ? 1 : -1));
+      if (value) list = list.filter((item) => item.category === value);
+      break;
+
+    default:
+      list = getState().products.listOriginal;
+      break;
+  }
+
+  dispatch({ type: ORDER_PRODUCTS, value: list });
+};
+
 /* Public Actions */
-export const actions = { getProducts };
+export const actions = { getProducts, orderList };
 
 /* Initial State */
 const initialState = {
   list: [],
+  listOriginal: [],
   loading: false,
   error: null,
 };
@@ -79,6 +107,14 @@ export default (state = initialState, { type, value }) => {
     }
 
     case SET_PRODUCTS: {
+      return {
+        ...state,
+        list: value,
+        listOriginal: value
+      };
+    }
+
+    case ORDER_PRODUCTS: {
       return {
         ...state,
         list: value
