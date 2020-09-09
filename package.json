@@ -14,13 +14,15 @@
     "test:cypress:run": "yarn build && yarn server & cypress run --quiet",
     "test:cypress:open": "yarn build && yarn server & cypress open",
     "server": "serve build",
-    "deploy:vercel": "vercel"
+    "deploy:vercel": "vercel",
+    "deploy:gh-pages": "gh-pages -d build"
   },
+  "homepage": "http://gioacostax.github.io/acamica-rewards",
   "license": "MIT",
   "app": {
     "title": "Rewards",
     "description": "Acamica Rewards",
-    "start_url": "/",
+    "start_url": "/acamica-rewards/",
     "src_alias": "src",
     "static_dir": "src/static",
     "index_html": "src/index.ejs",
@@ -50,6 +52,7 @@
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.1.0",
     "file-loader": "^6.1.0",
+    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^4.4.1",
     "mini-css-extract-plugin": "^0.11.0",
     "mobx": "^5.15.6",
