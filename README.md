@@ -1,12 +1,16 @@
-# React Starter Kit · [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+# Acamica Rewards · [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
-React Starter Kit is a fully configured base template for developing web applications in React. Redux, MobX and Router have also been integrated.
+Este es un proyecto para el curso de Front-End Avanzado en React. Consiste en una web donde el usuario puede canjear productos por puntos.
+
+Se puede probar en el siguiente link: https://app.giorgio.work/acamica-rewards/ o ejecutarlo localmente.
+
+Utiliza una token personal.
 
 ## Getting Started
 
 ```bash
 # Get the latest source
-git clone https://github.com/gioacostax/react-kit.git <myproject>
+git clone https://github.com/gioacostax/acamica-rewards.git <myproject>
 
 # Change directory
 cd <myproject>
